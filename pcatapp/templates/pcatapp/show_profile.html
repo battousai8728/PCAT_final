@@ -1,0 +1,140 @@
+{% extends 'pcatapp/base.html' %}
+{% block page_title %}PharmSchoolSearch User Profile{% endblock %}
+
+{% block page_style %}
+<style>
+#profile_box_content input, #user-form input, #signup_form input, #signup_form input, #reset_pass input{
+	height: 33px;
+	width: 240px;
+	margin-left:35px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; /* future proofing */
+	-khtml-border-radius: 5px;
+	border: 1px solid #b7b7b7;
+	box-shadow: 0 0 5px rgba(0,0,0,.2) inset;
+	padding-left: 8px;	
+}
+#user-form label{
+	width: 120px;
+}
+#signup_form label{
+	width: 160px;
+}
+#signup_form input{
+	width: 210px;
+}
+#profile_box_content{
+	padding: 10px 25px;
+}
+#profile_box_content p{
+	color: #5c8b9f;
+	font-weight: 300;
+}
+.input_class{
+	padding-left: 25px;
+}
+#search_container label{
+	width: 100px;
+}
+h4{
+	letter-spacing: 1px;
+	color: #5c8b9f;
+	font-size: 25px;
+	text-decoration: none;
+	font-weight:300;
+}
+
+#profile_box_content ul{
+	margin: 15px 0 5px;
+}
+
+
+#profile_box_content ul li{
+	display: block;
+	letter-spacing: 1px;
+	color: #666;
+	font-size: 17px;
+	font-weight:300;
+	margin: 8px 25px;
+}
+
+#profile_box_content ul li a{
+	color: #5c8b9f;
+}
+
+#edit_link{
+	display: block;
+	height: 54px;
+	line-height: 54px;
+	width: 108px;
+	margin: 0 0 12px 380px;
+	padding: 0 16px;
+	color: #ecf6fa;
+	font-size: 19px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	background: #29bbfa;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; /* future proofing */
+	-khtml-border-radius: 5px;
+	border: 0px;
+	box-shadow: 0 0 5px rgba(0,0,0,.3) inset;
+}
+</style>
+
+
+{% endblock %}
+
+
+
+
+
+
+{% block page_content %}
+<content>
+	<div id="search_container">
+	
+		<div id="profile_box_content">
+	
+					<h4>User Profile</h4>
+{% if student %}
+<ul id="user_profile">
+<li>GPA: {{ student.gpa }}</li>
+<li>PCAT: {{ student.pcat }}</li>
+<li>Zip Code: {{ student.zip_code }}</li>
+<li><a href="{% url 'pcatapp:showFavorites' %}">My Favorite Schools</a></li>
+
+</ul>
+<a id="edit_link" href="{% url 'pcatapp:editProfile' %}">Edit Profile</a>
+{% else %}
+<form id="search_form" action="{% url 'pcatapp:createStudent' %}" method="post">
+{% csrf_token %}
+<div class="input_class">
+{{ form.pcat.errors }}
+<label for="pcat">PCAT Score:</label>				
+{{ form.pcat }}
+</div>
+
+<div class="input_class">
+{{ form.gpa.errors }}
+<label for="gpa">GPA:</label>				
+{{ form.gpa }}
+</div>
+
+<div class="input_class">
+
+{{ form.zip_code.errors }}
+<label for="zip_code">Zip Code:</label>				
+
+{{ form.zip_code }}
+			</div>
+			<button type"submit" id="search_submit">Submit</button>	
+			</form>
+			
+{% endif %}
+</div>
+		</div>
+		</content>
+{% endblock %}

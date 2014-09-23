@@ -1,0 +1,37 @@
+{% load humanize %}
+{% load staticfiles %}
+
+
+<div id="custom-content" class="white-popup-block" style="max-width:600px; margin: 20px auto;">
+<h1>{{ school.name }}</h1>
+<h2>{{ school.city}}, {{ school.state}}</h2>
+<img src="http://162.243.223.20/static/pcatapp/school_images/ranked/{{ school.id }}.jpg" width="480px" style="padding-top: 10px" alt="{{ school.name }}"/>
+
+<ul>
+	<li><span class="left">School Rank:</span><span>{{ school.rank}}</span></li>
+	<li><span class="left">Minimum GPA:</span><span>{{ school.gpa_overall }}</span></li>
+<li><span class="left">Expected GPA:</span><span class="right">{{ school.gpa_expected }}</span></li>
+<li><span class="left">Minimum PCAT:</span><span>{{ school.min_pcat}}</span></li>
+<li><span class="left">In State Tuition:</span><span>${{ school.resident_tuition|intcomma}}</span></li>
+{% autoescape off %}
+{% if school.regional_bool %}<li><span class="left">Regional Tuition:</span><span>{{ school.regional_tuition|intcomma}}</span></li>{% endif %}
+{% endautoescape %}
+<li><span class="left">Out of State Tuition:</span><span>${{ school.nonresident_tuition|intcomma}}</span></li>
+<li><span class="left">Supplemental Application:</span><span>{% if school.supplemental %}Yes{% else %}No{% endif %}</span></li>
+<li><span class="left">Three Year Program:</span><span>{% if school.three_year %}Yes{% else %}No{% endif %}</span></li>
+<li><span class="left">Dual Degree Program:</span><span>{% if school.dual_degree %}Yes{% else %}No{% endif %}</span></li>
+	<li><span class="left">Accreditation Status:</span><span>{% if school.full_accred %}Full{% elif school.cand_accred %}Candidate{% elif school.prec_accred %}Pre-Candidate{% endif %}</span></li>
+{% autoescape off %}
+<li><span class="left">Address:</span><span class="address">{{ school.street }}<br />{{ school.city }}, {{ school.state }} {{ school.zip_code }}</span></li>
+{% endautoescape %}
+<li><span class="left">Website:</span><span class="website"><a href="{{ school.school_url }}">{{ school.school_url }}</a></span></li>
+<li><span class="left">Email Address:</span><span><a href="mailto:{{ school.email }}">{{ school.email }}</a></span></li>
+<li><span class="left">Phone:</span><span>{{ school.phone }}</span></li>
+	{% if is_fav %}
+	{% if request.user.is_authenticated %}<li><span class="left"><a href="{% url 'pcatapp:removeFavoriteR' school.id %}">Remove Favorite</a></span></li>{% endif %}
+	{% else %}
+	{% if request.user.is_authenticated %}<li><span class="left"><a href="{% url 'pcatapp:addFavoriteR' school.id %}">Add Favorite</a></span></li>{% endif %}
+	{% endif %}
+
+  </ul>
+</div>

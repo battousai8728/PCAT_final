@@ -1,0 +1,48 @@
+{% extends "account/base.html" %}
+{% block page_style %}
+<style>
+#search_container p{
+	color: #608aa1;
+	text-decoration: none;
+	font-weight: 300;
+	margin-left:25px;
+}
+#search_container a{
+	color: #608aa1;
+	font-weight: 300;
+}
+#login_submit{
+	margin-left: 400px;
+}
+</style>
+{% endblock %}
+{% load url from future %}
+{% load i18n %}
+{% load account %}
+
+{% block page_title %}PharmSchoolSearch Confirm E-mail Address{% endblock %}
+
+
+{% block page_content %}
+<h4>{% trans "Confirm E-mail Address" %}</h4>
+
+{% if confirmation %}
+
+{% user_display confirmation.email_address.user as user_display %}
+        
+<p>{% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{email}}">{{ email }}</a> is an e-mail address for user {{ user_display }}.{% endblocktrans %}</p>
+
+<form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+{% csrf_token %}
+    <button type="submit" id="login_submit"> {% trans 'Confirm' %}</button>
+</form>
+
+{% else %}
+
+{% url 'account_email' as email_url %}
+
+<p>{% blocktrans %}This e-mail confirmation link expired or is invalid. Please <a href="{{ email_url}}">issue a new e-mail confirmation request</a>.{% endblocktrans %}</p>
+
+{% endif %}
+
+{% endblock %}

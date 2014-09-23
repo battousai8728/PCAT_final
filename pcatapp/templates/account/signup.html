@@ -1,0 +1,69 @@
+{% extends "account/base.html" %}
+{% load url from future %}
+{% load i18n %}
+
+{% block page_title %}PharmSchoolSearch Register{% endblock %}
+
+
+{% block page_style %}
+<style>
+#search_box_content input, #user-form input, #signup_form input, #signup_form input, #reset_pass input{
+
+	margin-left:25px;
+
+}
+#register_submit{
+	margin-left: 405px !important;
+}
+content{
+	height: 520px;
+}
+</style>
+{% endblock %}
+
+{% block page_content %}
+<h4>Register</h4>
+		<h1> {% if form.errors %}
+		    {% for field in form %}
+		        {% for error in field.errors %}
+		         <ul class="errorlist">
+		<li>{{ error|escape }}</li>
+		</ul>
+		        {% endfor %}
+		    {% endfor %}
+		    {% for error in form.non_field_errors %}
+			    <ul class="errorlist">
+		<li>{{ error|escape }}</li>
+		</ul>								    {% endfor %}
+		{% endif %}
+		</h1>
+
+<form class="" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %}
+<div class="input_class">
+   <label for="email">Email: </label>
+  {{ form.email }}
+</div>
+
+<div class="input_class">
+  <label for="password1">Password: </label>
+  {{ form.password1 }}
+</div>
+
+<div class="input_class">
+  <label for="password2">Confirm Password: </label>
+  {{ form.password2 }}
+</div>
+
+
+  {% if redirect_field_value %}
+
+
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <button id="register_submit" type="submit">Sign Up</button>
+</form>
+
+{% endblock %}
+
+

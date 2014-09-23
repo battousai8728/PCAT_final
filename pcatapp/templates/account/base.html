@@ -1,0 +1,228 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=620">
+		<meta name="description" content="PharmSchoolSearch is an interactive website designed to help prospective pharmacy school students compare and evaluate pharmacy schools across the nation. The search algorithm PSS uses is designed to match students to the pharmacy school that best suits their credentials and criteria.">
+		<meta name="keywords" content="pharmacy school search, pharm school search, pharmacy school finder, pharmacy schools in the area, pharmacy schools, best pharmacy schools in the country, graduate schools, all pharmacy schools, advice from pharmacy students, prospective pharmacy student, pharmacy advice, what do i need to know about pharmacy school, pharmacy school requirements, pharmacy school forum, pharmacy forum, forum for pharmacy students,PSS, pharmacy school numbers, pharmacy school rankings, professional schools,  pharmacy profession, pharmacy school database, pharmacy listings, pharmacy school statistics, pharmacy school applications">
+		<link rel="stylesheet" href="http://162.243.223.20/static/pcatapp/style.css">
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
+
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="http://anthonydobbs.com/media/modal.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54273202-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+<script>
+$(function() {
+$( "#search_box_content" ).tabs();
+});
+
+
+</script>
+<style>
+
+#modal_bottom_bar{
+margin: 30px 0 0;	
+}
+#modal_bottom_bar a{
+	color: #608aa1;
+	text-decoration: none;
+	font-weight: 300;
+	margin-left:25px;
+}
+#login_submit, #register_submit, #password_submit{
+	height: 54px;
+	margin-left: 240px;
+	padding: 0 16px;
+	color: #ecf6fa;
+	font-size: 19px;
+	letter-spacing: 1px;
+	background: #29bbfa;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; /* future proofing */
+	-khtml-border-radius: 5px;
+	border: 0px;
+	box-shadow: 0 0 5px rgba(0,0,0,.3) inset;
+}
+#register_submit{
+	margin-left: 301px !important;
+}
+#password_submit{
+	margin-left: 0;
+}
+#search_box_content input, #user-form input, #signup_form input, #signup_form input, #reset_pass input{
+	height: 33px;
+	width: 240px;
+	margin-left:35px;
+	color: #5c8b9f;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; /* future proofing */
+	-khtml-border-radius: 5px;
+	border: 1px solid #b7b7b7;
+	box-shadow: 0 0 5px rgba(0,0,0,.2) inset;
+	padding-left: 8px;	
+}
+#user-form label{
+	width: 120px;
+}
+#signup_form label{
+	width: 160px;
+}
+#signup_form input{
+	width: 210px;
+}
+#search_box_content{
+	padding: 10px 25px;
+}
+#search_box_content p{
+	color: #5c8b9f;
+	font-weight: 300;
+}
+.input_class{
+	padding-left: 25px;
+}
+h4{
+	letter-spacing: 1px;
+	color: #5c8b9f;
+	font-size: 25px;
+	text-decoration: none;
+	font-weight:300;
+}
+.errorlist li{
+	color: #ed3d44;
+	padding: 10px 0 5px;
+	font-size: 16px;
+}
+
+input[type="checkbox"]{
+	width: auto !important;
+}
+
+@media all and (min-width: 0px) and (max-width: 768px){
+#search_box_content{
+	width: 468px !important;
+}
+}
+</style>
+
+<title>{% block page_title %}PharmSchoolSearch{% endblock %}</title>
+{% block page_style %}{% endblock %}
+</head>
+	<body>
+		<header>
+			<div id="header_container">
+			
+			<h1><a href="{% url 'pcatapp:index' %}">PharmSchoolSearch</a></h1>
+			<h2>Making Searching Simple</h2>
+			
+			
+			</div>
+			<span id="user_control">
+
+				{% if request.user.is_authenticated %}
+		<a href="{% url 'pcatapp:showProfile' %}">Profile</a>
+        <a href="{% url 'account_logout' %}">Sign Out</a>
+
+
+				{% else %}
+					<a href="{% url 'account_login' %}" class="login-popup">Login</a> 	<a href="{% url 'account_signup' %}" class="login-popup">Register</a> 
+				{% endif %}
+				</span>
+		</header>
+		
+
+		<content>
+			<div id="search_container">
+			
+				<div id="search_box_content">
+					{% block page_content %}
+			
+							<h4>Login</h4>
+								
+								<form class="" id="user-form" method="POST" action="{% url 'account_login' %}">
+
+								  {% csrf_token %}
+
+								<h1> {% if form.errors %}
+								    {% for field in form %}
+								        {% for error in field.errors %}
+								         <ul class="errorlist">
+								<li>{{ error|escape }}</li>
+								</ul>
+								        {% endfor %}
+								    {% endfor %}
+								    {% for error in form.non_field_errors %}
+									    <ul class="errorlist">
+								<li>{{ error|escape }}</li>
+								</ul>								    {% endfor %}
+								{% endif %}
+								</h1>
+
+						
+
+								
+								   <div class="input_class">
+
+								        <label for="login">Username: </label>
+								{{ form.login }}
+								</div>
+
+								<div class="input_class">
+								  <label for="password">Password: </label>
+								
+								  {{ form.password }}
+								</div>
+								<div class="input_class" id="forgot_pass">
+								  <label for="remember">
+								  Remember Me? </label>
+								{{ form.remember }}
+								</div>
+								  {% if redirect_field_value %}
+
+
+								  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+								  {% endif %}
+
+								<div id="modal_bottom_bar">
+
+								  <a class="button secondaryAction" id="forgot_pass" href="{% url 'account_reset_password' %}">Forgot your Password?</a>
+
+								  <button class="primaryAction" id="login_submit" type="submit">Login</button></div>
+								</form>
+
+{% endblock %}
+		
+				</div>
+
+			</div>
+			</content>
+	
+	<footer>
+		<div id="footer_container">
+			<div id="footer_content">
+
+		<span id="links">
+			<a href="{% url 'pcatapp:aboutPage' %}">About</a>
+			<a href="{% url 'pcatapp:contactPage' %}">Contact</a>
+      <a href="{% url 'pcatapp:faq' %}">FAQ</a>
+			</span>
+			<p>&copy; 2014 PharmSchoolSearch &nbsp &nbsp Design by <a href="http://alittlesquid.com"> A Little Squid</a></p>
+			</div>	
+			</div>	
+
+		</footer>
+
+		</body>
+	</html>
+
