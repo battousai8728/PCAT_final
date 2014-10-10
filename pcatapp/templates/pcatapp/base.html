@@ -116,17 +116,11 @@ $( "#search_box_content" ).tabs();
 
 				<div id="search_box_content">
 			<ul>
-								<li id="search_finder"><h4><a href="#tabs-2">Search by Name</a></h4></li>
+								
 							<li id="school_name"><h4><a href="#tabs-1">School Finder</a></h4></li>
+<li id="search_finder"><h4><a href="#tabs-2">Search by Name</a></h4></li>
 							</ul>
-								<div id="tabs-2">
-										<form id="search_form" action="{% url 'pcatapp:sByName' %}" method="GET">
-											{{ name_form.name }}
-											<button type"submit" id="search_submit">Search</button>
-
-											</form>
-
-</div>
+								
 <div id="tabs-1">
 
 	<form id="search_form" action="{% url 'pcatapp:sByInfo' %}#tabs-1" method="GET">
@@ -162,6 +156,14 @@ $( "#search_box_content" ).tabs();
 
 
 <button type"submit" id="search_submit">Search</button>								</form>	</div>
+<div id="tabs-2">
+										<form id="search_form" action="{% url 'pcatapp:sByName' %}" method="GET">
+											{{ name_form.name }}
+											<button type"submit" id="search_submit">Search</button>
+
+											</form>
+
+</div>
 				</div>
 
 			</div>
