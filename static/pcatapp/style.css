@@ -299,7 +299,7 @@ content{
 #search_box_content, #profile_box_content{
 	position: relative;
 	display: block;
-	width: 520px;
+	width: 530px;
 	background: #f1f7fa;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
