@@ -1,0 +1,527 @@
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+html {
+font-family: 'Roboto', sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup,
+main, nav, section, summary {
+    display: block
+}
+
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+[hidden], template {
+    display: none
+}
+
+a {
+    background: transparent
+}
+
+a:active, a:hover {
+    outline: 0
+}
+
+abbr[title] {
+    border-bottom: 1px dotted
+}
+
+b, strong {
+    font-weight: bold
+}
+
+dfn {
+    font-style: italic
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+mark {
+    background: #ff0;
+    color: #000
+}
+
+small {
+    font-size: 80%
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sup {
+    top: -0.5em
+}
+
+sub {
+    bottom: -0.25em
+}
+
+img {
+    border: 0
+}
+
+svg:not(:root) {
+    overflow: hidden
+}
+
+figure {
+    margin: 1em 40px
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0
+}
+
+pre {
+    overflow: auto
+}
+
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+
+button {
+    overflow: visible
+}
+
+button, select {
+    text-transform: none
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+button[disabled], html input[disabled] {
+    cursor: default
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
+input {
+    line-height: normal
+}
+
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+	margin: 0;
+	height: 15px !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+    height: auto
+}
+input[type="number"]{
+	-moz-appearance:textfield;
+}
+
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: .35em 0 .75em 20px;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+}
+
+optgroup {
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td, th {
+    padding: 0;
+}
+
+body{
+	background: #fff;
+}
+
+header{
+	background: url('header.jpg') no-repeat 40% 0%;
+	height: 370px;
+	width: 100%;
+	position: relative;
+	display: block;
+	min-height: 370px;
+}
+
+#header_container{
+	width: 100%;
+	height: 300px;
+	margin: 0 auto;
+	position: relative;
+}
+
+header h1{
+	position: absolute;
+	display: inline-block;
+	margin: 0;
+	padding-left: 10%;
+	top: 60px;
+}
+header h1 a{
+	margin: 0;
+	padding-left: 0;
+	font-size: 58px;
+	font-weight: 100;
+	text-decoration: none;
+	line-height: 70px;
+	color: #fff;
+	text-shadow:0 -1px 1px #000, 0 0 15px #000, 0 0 15px #000, 0 0 15px #000;
+}
+
+
+header h2{
+	position: absolute;
+	display: inline-block;
+	margin: 0;
+	padding-left: 10%;
+	font-size: 24px;
+	font-weight: 400;
+	letter-spacing: 1px;
+	top: 170px;
+	line-height: 30px;
+	color: #fff;
+	text-shadow:0 -1px 1px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000;
+}
+
+header #user_control, header #links{
+	position: absolute;
+	display: inline-block;
+	margin: 0;
+	letter-spacing: 1px;
+	line-height: 30px;
+	text-shadow:0 -1px 1px rgba(0,0,0,0.8), 0 0 10px #000;
+}
+
+header #links{
+	display: none;
+	top: 20px;
+	left:20px;
+}
+
+header #user_control{
+	top: 20px;
+	right:20px;
+}
+
+
+header #user_control a, header #links a{
+	font-size: 18px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 400;
+	padding:0 5px;
+	text-shadow:0 -1px 1px rgba(0,0,0,0.8), 0 0 10px #000;
+
+}
+
+content{
+	display: block;
+	position: relative;
+	background: #b7e4ff;
+	height: 480px;
+	width: 100%;
+}
+#search_container{
+	width: 520px;
+	margin: 0 auto;
+	position: relative;
+	padding-top: 90px;
+}
+
+#search_box{
+	position: absolute;
+	display: block;
+	top: 90px;
+	height: 300px;
+	width: 520px;
+}
+#search_box_content, #profile_box_content{
+	position: relative;
+	display: block;
+	width: 530px;
+	background: #f1f7fa;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px; /* future proofing */
+	-khtml-border-radius: 10px;
+	border: 1px solid #5aafd3;
+	box-shadow: 0 0 25px rgba(0,0,0,.3);
+}
+
+
+#search_submit{
+	height: 54px;
+	width: 100px;
+	margin: 0;
+	color: #ecf6fa;
+	font-size: 19px;
+	letter-spacing: 1px;
+	background: #29bbfa;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; /* future proofing */
+	-khtml-border-radius: 5px;
+	border: 0px;
+	box-shadow: 0 0 5px rgba(0,0,0,.3) inset;
+}
+#search_box_content h4, #profile_box_content h4{
+	display: inline-block;
+	padding-top: 18px;
+	margin: 0;
+}
+
+#search_box_content h4 a, #profile_box_content h4 a{
+	letter-spacing: 1px;
+	color: #5c8b9f;
+	font-size: 25px;
+	font-weight: 300;
+	text-decoration: none;
+}
+
+
+footer{
+	display: block;
+	position: relative;
+	height: 80px;
+	width: 100%;
+}
+
+#footer_container{
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#footer_content{
+	width: 1200px;
+	height: 50px;
+	top: 30px;
+	position: absolute;
+}
+
+
+#footer_content #links{
+	float: left;
+	display: inline-block;
+}
+
+#footer_content #links a{
+	color: #97b4c1;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 0 8px
+}
+
+#footer_content p{
+	color: #97b4c1;
+	float: right;
+	text-align: right;
+	font-size: 16px;
+	font-weight: 100;
+	display: inline-block;
+	margin: 0;
+}
+#footer_content a{
+	color: #97b4c1;
+	text-decoration:none;
+}
+.input_class{
+	display: block;
+	width: 420px;
+	margin: 18px 0;
+}
+#search_box_content ul, #profile_box_content ul{
+	margin: 0;
+	padding:0;
+}
+#search_box_content ul li, #profile_box_content ul li{
+	display: inline-block;
+	margin: 0;
+}
+
+#school_finder{
+	float: right;
+	padding: 0 40px 10px 40px;
+	border-top-right-radius: 10px;
+	background: #dbf1fa;
+}
+#search_name{
+	padding: 0 38px 10px 38px;
+	border-top-left-radius: 10px;
+	background: #dbf1fa;
+	
+}
+
+li.ui-state-active{
+	border-top-right-radius: 0 !important;
+	background: inherit !important;
+}
+:link:focus, :visited:focus {
+    outline: none;
+}
+
+.input_class{
+	display: block;
+	width: 450px;
+	margin: 18px 0;
+}
+ label{
+	display: inline-block;
+	width: 60px;
+	color: #5c8b9f;
+	font-weight: 300;
+	font-size: 17px;
+}
+
+
+
+#tabs-1{
+margin: 100px 0 80px;
+}
+#tabs-2{
+margin: 15px 0 25px;
+padding-left: 25px;
+}
+input[type="checkbox"]{
+	box-shadow: none !important;
+}
+
+select{
+margin-left:35px;
+}
+@media all and (min-width: 1500px) {
+
+header{
+	background-size: 100%;
+}
+}
+@media all and (min-width: 768px) {
+	
+	#footer_links{
+		display: none;
+	}
+	#footer_content p{
+		width:100%;
+		text-align: center;
+	}
+	header #links{
+		display: inline-block;
+	}
+	header h1{
+		top: 110px;
+	}
+
+	header h2{
+		top: 220px;
+	}
+
+}
+@media all and (min-width: 768px) and (max-width: 1300px){
+
+	#footer_container{
+		width: 90% !important;
+	}
+
+	#footer_content{
+		width: 100% !important;
+	}
+}
+@media all and (min-width: 0px) and (max-width: 768px){
+	header h1{
+		top:100px;
+	}
+	header h1 a{
+		padding-left: 10%;
+	}	
+	header h2 {
+		margin-left: 10%;	
+	}
+	header h2{
+		top:210px;
+	}
+	header h1, header h2{
+		padding: 0;
+		text-align: center;
+	}
+	
+	#footer_container{
+		width: 90% !important;
+	}
+	#footer_content #footer_links{
+		text-align: center;
+		display: block;
+		float: none;
+	}
+	
+	#footer_content{
+		width: 100% !important;
+	}
+	#footer_content p{
+		padding-top: 8px;
+		display: block;
+		text-align: center;
+		float: none;
+		
+	}
+}
