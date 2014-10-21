@@ -29,7 +29,7 @@ class Ranked(models.Model):
 
 	regional_tuition = models.CharField('regional tuition', max_length = 100, null = True, blank = True, default = False)
 	regional_bool = models.BooleanField('regional boolean', default = False)
-
+	
 	supplemental = models.BooleanField(default = False)
 	three_year = models.BooleanField(default = False)
 	dual_degree = models.BooleanField(default = False)
@@ -70,7 +70,6 @@ class Unranked(models.Model):
 
 	regional_tuition = models.CharField('regional tuition', max_length = 100, null = True, blank = True)
 	regional_bool = models.BooleanField('regional boolean', default = False)
-
 
 	supplemental = models.BooleanField(default = False)
 	three_year = models.BooleanField(default = False)
