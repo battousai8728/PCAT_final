@@ -1,0 +1,122 @@
+{% extends 'pcatapp/base.html' %}
+{% block page_title %}PharmSchoolSearch Contact{% endblock %}
+{% block page_style %}
+<style>
+
+contact{
+	display: block;
+	position: relative;
+	background: #f3f7f7;
+	width: 100%;
+}
+#contact_container{
+	width: 84%;
+	margin: 0 auto;
+	position: relative;
+	padding: 50px 0;
+}
+#contact_form{
+	margin-top: 25px;
+}
+.input_class{
+	display: block;
+	width: 400px;
+	margin: 18px 0;
+}
+#contact_form label{
+	display: inline-block;
+	width: 60px;
+	color: #5c8b9f;
+	font-weight: 300;
+	font-size: 17px;
+}
+
+#contact_form input{
+	height: 33px;
+	width: 240px;
+	margin-left:35px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; /* future proofing */
+	-khtml-border-radius: 5px;
+	border: 1px solid #b7b7b7;
+	box-shadow: 0 0 5px rgba(0,0,0,.2) inset;
+	padding-left: 8px;	
+}
+#contact_form textarea{
+	display: block;
+	height: 200px;
+	width: 700px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; /* future proofing */
+	-khtml-border-radius: 5px;
+	border: 1px solid #b7b7b7;
+	box-shadow: 0 0 5px rgba(0,0,0,.2) inset;
+	padding: 8px;
+	margin-top: 20px;	
+}
+#contact_submit{
+	height: 54px;
+	width: 100px;
+	margin-top: 25px;
+	color: #ecf6fa;
+	font-size: 19px;
+	letter-spacing: 1px;
+	background: #29bbfa;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; /* future proofing */
+	-khtml-border-radius: 5px;
+	border: 0px;
+	box-shadow: 0 0 5px rgba(0,0,0,.3) inset;
+}
+contact h3{
+	color: #5c8b9f;
+	font-weight: 300;
+	font-size: 24px;
+	margin: 0 0 0 -25px;
+}
+contact p{
+	color: #5c8b9f;
+	font-weight: 300;
+	font-size: 16px;
+	margin-top: 14px;
+	line-height: 22px;	
+}
+@media all and (min-width: 0px) and (max-width: 768px){
+	contact h3{
+		margin: 0 0 0 -15px;
+	}
+	#contact_container{
+		width: 90%;
+		margin: 0 auto;
+		position: relative;
+		padding: 40px 0;
+	}
+	#contact_form textarea{
+		width: 100%;
+	}
+
+}
+</style>
+
+{% endblock %}
+
+
+		{% block page_content %}
+
+			<contact>
+				<div id="contact_container">
+					<div class="results_table" >
+<h3>Contact</h3>
+<p>Thank you for your feedback! A member of our team will reach out to you soon.</p>
+
+					            </div>
+
+
+
+			</div>
+			</contact>
+			{% endblock %}
+			

@@ -176,7 +176,7 @@ $( "#search_box_content" ).tabs();
 			<a href="{% url 'pcatapp:contactPage' %}">Contact</a>
       <a href="{% url 'pcatapp:faq' %}">FAQ</a>
 			</span>
-		<p>&copy; 2014 PharmSchoolSearch &nbsp &nbsp Design by <a href="http://alittlesquid.com"> A Little Squid</a></p>		</div>	
+		<p>&copy; 2014 PharmSchoolSearch &nbsp &nbsp <a href="https://itunes.apple.com/us/app/pharmschoolsearch/id918600546?mt=8"><img src="http://162.243.223.20/static/pcatapp/appstore.svg"></a></p>		</div>	
 			</div>	
 
 		</footer>

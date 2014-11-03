@@ -2308,7 +2308,7 @@ def feedback(request):
 
 		message = "Thank you for your feedback! A member of our team will reach out to you soon."
 
-		return render_to_response('pcatapp/contact_result.html', {'error' : message}, context_instance = RequestContext(request))
+		return render_to_response('pcatapp/contact_results.html', {'error' : message}, context_instance = RequestContext(request))
 
 
 
