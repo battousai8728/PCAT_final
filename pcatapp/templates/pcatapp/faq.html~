@@ -171,7 +171,7 @@ For GPA, the search algorithm uses the average of the minimum and expected GPA. 
 <br/>
 For Location, the search algorithm provides a list of schools within 150 miles radius from the city and state.<br/>
 <br/>
-Schools matching or exceeding two of the entered criteria (i.e. GPA and PCAT, GPA and Location, etc.) will show in the results at the top with a ★ next to them listed in rank order or alphabetically for the unranked schools. This means the student has a higher chance of getting into these respective schools. If their criteria only match one of the parameters, they will be listed under the stars in rank order or alphabetically for the unranked schools.<br/>
+Schools matching or exceeding two of the entered criteria (i.e. GPA and PCAT, GPA and Location, etc.) will show in the results at the top with a ★ next to them listed in rank order or alphabetically for the unranked schools. This means the applicant has a higher chance of getting into these respective schools. If their criteria only match one of the parameters, they will be listed under the stars in rank order or alphabetically for the unranked schools.<br/>
 <br/>
 <a name="q14"></a><strong>When I perform an advanced search, why do the results no longer display stars next to the schools? </strong><br/>
 
